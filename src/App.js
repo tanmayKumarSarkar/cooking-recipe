@@ -6,8 +6,8 @@ import Header from './components/Header';
 import Form from './components/Form';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-const cors_url = process.env.REACT_APP_CORS_ANYWHERE_URL;
 const env_mode =  process.env.REACT_APP_STAGE;
+const cors_url = process.env.REACT_APP_CORS_ANYWHERE_URL;
 
 class App extends Component {
 
