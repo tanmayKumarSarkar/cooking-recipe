@@ -34,6 +34,7 @@ class App extends Component {
     const recipes = JSON.parse(json);
     this.setState({ recipes });
   }
+  
   componentDidUpdate = () => {
     const recipes = JSON.stringify(this.state.recipes);
     localStorage.setItem("recipes", recipes);
