@@ -8,8 +8,13 @@ const Router = () => (
         <Switch>
             <Route path="/" component={App} exact />
             <Route path="/recipe/:id" component={Recipe} />
+            <Route component={ErrorComp} />
         </Switch>
     </BrowserRouter>
 );
+
+const ErrorComp = ()=> (
+    <div> Error 🙁 Path Does Not Exists!! </div>
+  );
 
 export default  Router;
