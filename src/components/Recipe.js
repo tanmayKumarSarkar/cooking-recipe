@@ -68,7 +68,7 @@ class Recipe extends Component {
                                     ))
                                 }</ul>
                             
-                            <button className="active-recipe__button">
+                            <button className="active-recipe__button mb-4">
                             <Link to="/">Go Home</Link>
                             </button>
                             <button className="active-recipe__button">
