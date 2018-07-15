@@ -10,6 +10,12 @@ class Recipes extends React.Component{
         $('[data-toggle="title"]').tooltip();
     }
 
+    dcdChar(input) {
+        var y = document.createElement('textarea');
+        y.innerHTML = input;
+        return y.value;
+      }
+
     render(){
         return(
             <div className="container">
@@ -25,9 +31,9 @@ class Recipes extends React.Component{
                                         src={recipe.image_url} 
                                         alt={recipe.title}/>
                                     <div className="recipe__text">
-                                        <h5 className="recipes__title" data-toggle="title" title={recipe.title} >
+                                        <h5 className="recipes__title" data-toggle="title" title={this.dcdChar.bind(this)(recipe.title)} >
                                         {
-                                            recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...`
+                                            recipe.title.length < 20 ? `${unescape(recipe.title)}` : `${this.dcdChar.bind(this)(recipe.title.substring(0, 25))}...`
                                         }
                                         </h5>
                                         <p className="recipes__subtitle">Publisher: <span>{recipe.publisher}</span></p>

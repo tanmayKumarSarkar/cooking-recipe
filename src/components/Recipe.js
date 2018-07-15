@@ -28,6 +28,12 @@ class Recipe extends Component {
     
   }
 
+  dcdChar(input) {
+    var y = document.createElement('textarea');
+    y.innerHTML = input;
+    return y.value;
+  }
+
   render() {
     const recipe = this.state.activeRecipe;
     return (
@@ -46,7 +52,7 @@ class Recipe extends Component {
                     </div>
                     <div className="col-md-6" >
                         <div className="active-recipe" >            
-                            <h3 className="active-recipe__title" >{ recipe.title }</h3>
+                            <h3 className="active-recipe__title" >{ this.dcdChar.bind(this)(recipe.title)}</h3>
                             <h4 className="active-recipe__publisher">
                             Publisher: <span>{ recipe.publisher }</span>
                             </h4>
