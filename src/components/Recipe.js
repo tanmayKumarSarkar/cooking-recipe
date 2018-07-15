@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Header from './Header';
+import $ from 'jquery';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const cors_url = process.env.REACT_APP_CORS_ANYWHERE_URL;
@@ -9,23 +10,32 @@ const env_mode =  process.env.REACT_APP_STAGE;
 class Recipe extends Component {
 
   state = {
-    activeRecipe: { }
+    activeRecipe: { },
+    length:-1
   }
 
   componentWillMount = async () => {     
      const recipeId = this.props.match.params.id;
      const api_call = await fetch(`${cors_url}http://food2fork.com/api/get?key=${API_KEY}&rId=${recipeId}`);
      const data = await api_call.json();
-     this.setState({activeRecipe: data.recipe});
+     //if(data.recipe.length <= 0) return (<Redirect to='/error'/>);
+     this.setState({activeRecipe: data.recipe, length:data.recipe.length});
+     $('#preloader').fadeOut('slow',function(){$(this).remove();});
+     //console.log(this.state);
+  }
+
+  componentDidMount() {
+    
   }
 
   render() {
     const recipe = this.state.activeRecipe;
     return (
         <div> 
+            {this.state.length === 0?  <Redirect to='/error'/> :"" }
             <Header/>
         <div className="container mx-auto px-auto">
-        
+        <div id="preloader"></div>
             { 
                 
                 <div className="row" >
