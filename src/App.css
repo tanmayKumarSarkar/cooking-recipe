@@ -226,7 +226,7 @@ h1 {font-size: 1rem !important;}
 
 @media (min-width: 320px) {  
   h1 {font-size:1.2rem !important; } /*1rem = 16px*/
-  .form__input {letter-spacing: .01px; font-size: .9rem;}
+  .form__input {letter-spacing: .01px; font-size: .8rem;}
 }
 
 @media (min-width: 544px) {  
