@@ -222,4 +222,34 @@ li:before {
 }
 
 
+h1 {font-size: 1rem !important;}
+
+@media (min-width: 320px) {  
+  h1 {font-size:1.2rem !important; } /*1rem = 16px*/
+  .form__input {letter-spacing: .01px; font-size: .9rem;}
+}
+
+@media (min-width: 544px) {  
+  h1 {font-size:1.6rem !important;} /*1rem = 16px*/
+  .form__input {letter-spacing: 1px; font-size: 1.2rem;}
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  h1 {font-size:2rem !important;} /*1rem = 16px*/
+  .form__input {letter-spacing: 2.5px;}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  h1 {font-size:2.5rem;} /*1rem = 16px*/
+  .form__input {letter-spacing: 3.5px;}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  h1 {font-size:3rem;} /*1rem = 16px*/  
+  .form__input {letter-spacing: 4px;}  
+}
+
 
