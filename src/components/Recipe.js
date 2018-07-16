@@ -5,6 +5,7 @@ import $ from 'jquery';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const cors_url = process.env.REACT_APP_CORS_ANYWHERE_URL;
+ // eslint-disable-next-line
 const env_mode =  process.env.REACT_APP_STAGE;
 
 class Recipe extends Component {
@@ -25,13 +26,13 @@ class Recipe extends Component {
   }
 
   componentDidMount() {
-    
   }
 
   dcdChar(input) {
+    if (input === undefined ) return 'Loading...';
     var y = document.createElement('textarea');
     y.innerHTML = input;
-    return y.value == undefined ? 'Loading...' : y.value;
+    return y.value;
   }
 
   render() {

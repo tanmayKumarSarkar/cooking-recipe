@@ -7,6 +7,7 @@ import Form from './components/Form';
 import $ from 'jquery';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
+ // eslint-disable-next-line
 const env_mode =  process.env.REACT_APP_STAGE;
 const cors_url = process.env.REACT_APP_CORS_ANYWHERE_URL;
 
@@ -39,7 +40,7 @@ class App extends Component {
     const json = localStorage.getItem("recipes");
     const recipes = JSON.parse(json);
     // this.setState({ recipes });
-    // //console.log(this.state);
+    // console.log(this.state);
     if(recipes != null && recipes.length !== 0)
     $('#preloader').fadeOut('slow',function(){$(this).remove();});
   }

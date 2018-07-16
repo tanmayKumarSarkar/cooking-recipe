@@ -14,7 +14,7 @@ html, body {
     font-size: 30vh;
     font-weight: bold;
     position: relative;
-    margin: -8vh 0 0;
+    margin: -2vh 0 0;
     padding: 0;
   }
   .error-page h1:after {
@@ -96,9 +96,9 @@ html, body {
     display: inline-block;
     width: 358px;
     padding: 5px;
-    z-index: 5;
+    z-index: 10;
+    font-weight: bold;
     font-size: 25px;
     margin:0 auto;
     color: whitesmoke !important;
-    margin-right: 10px
 }
