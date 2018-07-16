@@ -31,7 +31,7 @@ class Recipe extends Component {
   dcdChar(input) {
     var y = document.createElement('textarea');
     y.innerHTML = input;
-    return y.value;
+    return y.value == undefined ? 'Loading...' : y.value;
   }
 
   render() {
